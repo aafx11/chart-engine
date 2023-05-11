@@ -43,15 +43,14 @@ export default {
     del(),
     builtins(),
     json(),
-    alias({
-      entries: {
-        '@packages': './packages'
-      }
-    }),
+    // alias({
+    //   entries: {
+    //     '@packages': './packages'
+    //   }
+    // }),
     eslint({
       throwOnError: true,
       throwOnWarning: true,
-      include: ['packages/**'],
       exclude: ['node_modules/**', 'dist/**']
     }),
     typescript({

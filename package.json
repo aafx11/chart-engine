@@ -7,7 +7,8 @@
     "build": "rollup -c",
     "lint": "eslint --fix",
     "test": "jest --coverage",
-    "test-live": "cross-env DEBUG_MODE=1 jest --coverage"
+    "test-live": "cross-env DEBUG_MODE=1 jest --coverage",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,8 @@
     "@babel/cli": "^7.21.5",
     "@babel/core": "^7.21.8",
     "@babel/preset-env": "^7.21.5",
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.1.0",
     "@rollup/plugin-eslint": "^9.0.3",
@@ -27,8 +30,11 @@
     "babel-jest": "^29.5.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.40.0",
+    "husky": "^8.0.0",
     "jest": "^26.0.1",
     "jest-electron": "^0.1.12",
+    "lint-staged": "^13.2.2",
+    "mrm": "^2.6.2",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-node-builtins": "^2.1.2",
@@ -46,5 +52,8 @@
     "eslint-plugin-promise": "^6.1.1",
     "rollup": "2.78.0",
     "typescript": "^5.0.4"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
   }
 }
