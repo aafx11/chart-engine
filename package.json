@@ -8,7 +8,8 @@
     "lint": "eslint --fix",
     "test": "jest --coverage",
     "test-live": "cross-env DEBUG_MODE=1 jest --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "ci": "run-s lint test build"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +36,7 @@
     "jest-electron": "^0.1.12",
     "lint-staged": "^13.2.2",
     "mrm": "^2.6.2",
+    "npm-run-all": "^4.1.5",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-node-builtins": "^2.1.2",
