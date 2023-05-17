@@ -1,4 +1,4 @@
-import { applyAttributes, createSVGElement, mount } from './utils';
+import { applyAttributes, createSVGElement, mount } from '../utils';
 import type { Context } from './interface.d';
 
 const shape = (type: string, context: Context, attributes: Record<string, any>): SVGElement => {

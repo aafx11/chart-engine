@@ -1,5 +1,5 @@
 import type { Context } from './interface.d';
-import { createSVGElement, mount } from './utils';
+import { createSVGElement, mount } from '../utils';
 
 const createContext = (width: number, height: number): Context => {
   const svg = createSVGElement('svg');

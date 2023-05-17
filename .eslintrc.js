@@ -21,7 +21,7 @@ module.exports = {
         sourceType: 'module'
     },
     rules: {
-        'linebreak-style': ['error', 'windows'],
+        // 'linebreak-style': ['error', 'windows'],
         'import/no-unresolved': 0,
         'no-unused-vars': 0,
         'import/prefer-default-export': 0,
@@ -33,6 +33,8 @@ module.exports = {
         'no-sequences': 0,
         'no-loop-func': 0,
         'no-nested-ternary': 0,
-        "@typescript-eslint/no-explicit-any": ["off"]
+        "@typescript-eslint/no-explicit-any": ["off"],
+        "@typescript-eslint/ban-ts-comment": "off",
+        " @typescript-eslint/no-unused-vars": "off"
     }
 }

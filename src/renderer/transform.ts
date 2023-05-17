@@ -1,6 +1,6 @@
 
 import type { Context } from './interface.d';
-import { applyTransform, createSVGElement, mount } from './utils';
+import { applyTransform, createSVGElement, mount } from '../utils';
 
 const transform = (type: string, context: Context, ...params: any[]) => {
   console.log('参数', params);
