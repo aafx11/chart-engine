@@ -39,7 +39,7 @@ describe('legend', () => {
     const renderer = createRenderer(600, 400);
     mount(createDiv(), renderer.node());
 
-    legendRamp(renderer, scale, {} as, {
+    legendRamp(renderer, scale, {} as any, {
       x: 10,
       y: 10,
       domain,
