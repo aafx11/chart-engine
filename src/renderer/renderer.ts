@@ -1,3 +1,4 @@
+import type { Renderer } from "./interface.d";
 import { createContext } from './context';
 import {
   line, circle, text, rect, path, ring,
@@ -6,7 +7,7 @@ import {
   restore, save, scale, translate, rotate,
 } from './transform';
 
-const createRenderer = (width: number, height: number) => {
+const createRenderer = (width: number, height: number): Renderer => {
   const context = createContext(width, height);
   return {
     line: (options: Record<string, any>) => line(context, options),

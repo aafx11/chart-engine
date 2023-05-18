@@ -44,7 +44,8 @@ const text = (context: Context, attributes: Record<string, any>) => {
  */
 const path = (context: Context, attributes: Record<string, any>) => {
   const { d } = attributes;
-  return shape('path', context, { ...attributes, d: d.flat().join(' ') });
+  const path = Array.isArray(d) ? d.flat().join(' ') : d;
+  return shape('path', context, { ...attributes, d: path });
 };
 
 const ring = (context: Context, attributes: Record<string, any>) => {

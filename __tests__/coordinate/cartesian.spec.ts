@@ -4,7 +4,7 @@ import {
 
 describe('cartesian', () => {
   test('cartesian()', () => {
-    const c = createCoordinate({
+    const c: any = createCoordinate({
       width: 200,
       height: 300,
       x: 0,

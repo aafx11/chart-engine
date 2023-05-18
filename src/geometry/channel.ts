@@ -5,6 +5,7 @@ const createChannel = ({
 }: {
   name: string,
   optional?: boolean;
+  [key: string]: any;
 }) => {
   return { name, optional, ...rest };
 };

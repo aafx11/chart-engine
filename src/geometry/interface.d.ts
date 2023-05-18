@@ -1,3 +1,4 @@
+import type { Renderer } from "../renderer/interface.d";
 type Channels = {
   [key: string]: {
     name: string,
@@ -13,7 +14,24 @@ type CircleOptions = {
   [key: string]: any;
 };
 
+type Render = (
+  renderer: Renderer,
+  I: any[],
+  scales: any,
+  values: { [key: string]: any[]; },
+  directStyles: { [key: string]: any; },
+  coordinate: any,
+) => any;
+
+type Shape = (
+  renderer: Renderer,
+  coordinate: any,
+  shapeOptions: CircleOptions
+) => SVGElement | SVGElement[];
+
 export {
   Channels,
-  CircleOptions
+  CircleOptions,
+  Render,
+  Shape
 };

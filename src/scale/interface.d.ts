@@ -9,13 +9,13 @@ type CreateTime = {
   range: number[],
 };
 
-type CreateOrdinal = {
-  domain: string[],
+type CreateOrdinal<T> = {
+  domain: T[],
   range: string[] | number[];
 };
 
-type CreateBand = {
-  domain: string[];
+type CreateBand<T> = {
+  domain: T[];
   range: [number, number];
   padding: number;
   margin?: number;

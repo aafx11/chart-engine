@@ -1,3 +1,4 @@
+import type { Render } from './interface.d';
 import { createChannel, createChannels } from './channel';
 import { createGeometry } from './geometry';
 import { circle } from './shape';
@@ -7,7 +8,7 @@ const channels = createChannels({
   r: createChannel({ name: 'r' }),
 });
 
-const render = (renderer: any, I: any[], scales: any, values: { [key: string]: any[]; }, directStyles: { [key: string]: any; }, coordinate: any) => {
+const render: Render = (renderer, I, scales, values, directStyles, coordinate) => {
   const defaults = {
     r: 3,
     fill: 'none'
