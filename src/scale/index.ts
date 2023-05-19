@@ -6,4 +6,6 @@ export { createPoint } from './point';
 export { createThreshold } from './threshold';
 export { createQuantize } from './quantize';
 export { createQuantile } from './quantile';
+export { createIdentity } from './identity';
+export { createLog } from './log';
 export { interpolateNumber, interpolateColor } from './interpolate';

@@ -32,11 +32,18 @@ type CreateThreshold = {
   range: string[];
 };
 
+type CreateLog = {
+  domain: number[],
+  base: number,
+  [key: string]: any;
+};
+
 export {
   CreateLinear,
   CreateTime,
   CreateOrdinal,
   CreateBand,
   bandScale,
-  CreateThreshold
+  CreateThreshold,
+  CreateLog
 };

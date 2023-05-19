@@ -1,5 +1,6 @@
 import type { Interval } from './interface.d';
-const identity = (x: any) => {
+
+const identity = <T>(x: T) => {
   return x;
 };
 
@@ -38,6 +39,10 @@ const curry = (fn: (...args: any[]) => any) => {
   };
 };
 
+const log = (n: number, base: number) => {
+  return Math.log(n) / Math.log(base);
+};
+
 export {
   identity,
   compose,
@@ -46,5 +51,6 @@ export {
   nice,
   ceil,
   floor,
-  curry
+  curry,
+  log
 };

@@ -57,7 +57,7 @@ const ticks = (min: number, max: number, count: number): number[] => {
 };
 
 // 取数组中间下标
-const bisect = (array: unknown[], x: number, lo = 0, hi = array.length, accessor = identity) => {
+const bisect = (array: any[], x: number, lo = 0, hi = array.length, accessor = identity) => {
   let i = lo;
   let j = hi;
   while (i < j) {
@@ -85,7 +85,7 @@ const bisect = (array: unknown[], x: number, lo = 0, hi = array.length, accessor
  * const groups = group(array, d => d.name);
  * groups // Map(2) {'a' => [{name: 'a', value:1}, {name: 'a', value: 2}], 'b' => [{name: 'b', value: 3}]}
  */
-const group = <T>(array: T[], key = (d: T): T => d): Map<string, T> => {
+const group = <T>(array: T[], key = (d: T): T => d): Map<string | number, T> => {
   const keyGroups = new Map();
   for (const item of array) {
     const k = key(item);
@@ -101,15 +101,23 @@ const group = <T>(array: T[], key = (d: T): T => d): Map<string, T> => {
 
 const lastOf = <T>(array: T[]) => {
   return array[array.length - 1];
-}
+};
 
 const firstOf = <T>(array: T[]) => {
   return array[0];
-}
+};
 
 const indexOf = <T>(array: T[]) => {
   return array.map((_, i) => i);
-}
+};
+
+const min = (array: number[], accessor: (x: number) => number) => {
+  return Math.min(...array.map(accessor));
+};
+
+const max = (array: number[], accessor: (x: number) => number) => {
+  return Math.max(...array.map(accessor));
+};
 
 
 export {
@@ -119,5 +127,7 @@ export {
   group,
   lastOf,
   firstOf,
-  indexOf
+  indexOf,
+  min,
+  max
 };
