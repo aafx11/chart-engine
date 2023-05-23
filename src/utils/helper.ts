@@ -43,6 +43,24 @@ const log = (n: number, base: number) => {
   return Math.log(n) / Math.log(base);
 };
 
+const map = (object: any, transform: (...args: any) => any = identity) => {
+  return Object.entries(object).reduce((obj, [key, value]) => {
+    obj[key] = transform(value, key);
+    return obj;
+  }, {} as any);
+};
+
+const defined = (d: unknown) => {
+  return d !== undefined && !Number.isNaN(d);
+};
+
+const assignDefined = (target:any, source:any) => {
+  for (const [key, value] of Object.entries(source)) {
+    if (value !== undefined) target[key] = value;
+  }
+}
+
+
 export {
   identity,
   compose,
@@ -52,5 +70,8 @@ export {
   ceil,
   floor,
   curry,
-  log
+  log,
+  map,
+  defined,
+  assignDefined
 };

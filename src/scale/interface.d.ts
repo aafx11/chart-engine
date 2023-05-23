@@ -5,7 +5,8 @@ type CreateLinear = {
 };
 
 type CreateTime = {
-  domain: [Date, Date],
+  // domain: [Date, Date],
+  domain: Date[],
   range: number[],
 };
 

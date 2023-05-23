@@ -1,8 +1,13 @@
 import type { CreateNormalizeY } from './interface';
 import { group } from '../utils';
 
-const createNormalizeY: CreateNormalizeY = () => {
-  return ({ index, values }) => {
+function createNormalizeY() {
+  return ({ index, values }: {
+    index: number[];
+    values: {
+      [key: string]: any[];
+    };
+  }) => {
     const { x: X } = values;
     const series: any = X ? Array.from(group(index, (i) => X[i]).values()) : [index];
     const newValues = Object.fromEntries(
@@ -27,7 +32,8 @@ const createNormalizeY: CreateNormalizeY = () => {
       },
     };
   };
-};
+}
+
 
 export {
   createNormalizeY

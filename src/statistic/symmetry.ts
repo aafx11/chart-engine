@@ -1,8 +1,12 @@
 import type { CreateSymmetryY } from './interface';
 import { group } from '../utils';
 
-const createSymmetryY: CreateSymmetryY = () => {
-  return ({ index, values }) => {
+function createSymmetryY() {
+  return ({ index, values }: {
+    index: number[], values: {
+      [key: string]: any[];
+    };
+  }) => {
     const { x: X } = values;
     const series = X ? Array.from(group(index, (i) => X[i]).values()) : [index];
     const newValues = Object.fromEntries(
@@ -36,7 +40,8 @@ const createSymmetryY: CreateSymmetryY = () => {
       },
     };
   };
-};
+}
+
 
 export {
   createSymmetryY

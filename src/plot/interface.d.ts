@@ -19,14 +19,16 @@ type Guide = (renderer: Renderer, scale: any, coordinate: any, { domain, label, 
 }) => void;
 
 type Ctor = ({ domain: [d0, d1], range: [r0, r1], interpolate }: {
-  domain: number[],
+  domain: any[],
   range: number[],
+  base: number,
   interpolate?: (t: number, start: number, stop: number) => number;
-}) => {
-  (x: number): number;
-  ticks(tickCount?: number): number[];
-  nice(tickCount?: number): void;
-};
+}) => any 
+// {
+//   (x: number): number;
+//   ticks(tickCount?: number): number[];
+//   nice(tickCount?: number): void;
+// };
 
 export {
   SPNode,

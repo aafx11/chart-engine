@@ -1,4 +1,4 @@
-type CreateStackY = () => (
+type CreateStackY = (
   data: {
     index: number[];
     values: {
@@ -12,7 +12,7 @@ type CreateStackY = () => (
   };
 };
 
-type CreateNormalizeY = () => (
+type CreateNormalizeY = (
   data: {
     index: number[];
     values: {
@@ -26,7 +26,7 @@ type CreateNormalizeY = () => (
   };
 };
 
-type CreateSymmetryY = () => (
+type CreateSymmetryY = (
   data: {
     index: number[];
     values: {
